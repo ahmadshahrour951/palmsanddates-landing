@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 import Vue from 'vue';
-import { BootstrapVue } from 'bootstrap-vue';
 import Scrollspy from 'vue2-scrollspy';
 import { customAxios } from './axios.config';
 import VueAxios from 'vue-axios';
@@ -17,7 +16,6 @@ import '@/assets/css/general.css';
 
 Vue.use(Scrollspy);
 Vue.use(VueScrollTo);
-Vue.use(BootstrapVue);
 Vue.use(VueAxios, customAxios);
 
 new Vue({

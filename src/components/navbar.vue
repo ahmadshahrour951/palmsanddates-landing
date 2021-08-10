@@ -1,7 +1,14 @@
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiMenu } from '@mdi/js';
+import { ArrowRightCircleIcon } from 'vue-feather-icons';
 import {
-  ArrowRightCircleIcon,
-} from 'vue-feather-icons';
+  BContainer,
+  BNavbarBrand,
+  BCollapse,
+  BNavItem,
+  BNavbarNav,
+} from 'bootstrap-vue';
 
 export default {
   props: {
@@ -10,8 +17,19 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      pathMenu: mdiMenu,
+    };
+  },
   components: {
+    SvgIcon,
     ArrowRightCircleIcon,
+    BContainer,
+    BNavbarBrand,
+    BCollapse,
+    BNavItem,
+    BNavbarNav,
   },
   mounted: () => {
     window.onscroll = function() {
@@ -47,63 +65,51 @@ export default {
     id="navbar"
     :class="{ 'navbar-light': navbarcolor === true }"
   >
-    <div class="container">
+    <b-container>
       <!-- LOGO -->
-      <a class="navbar-brand logo" href="/">
+      <b-navbar-brand class="logo" href="/">
+        <img src="@/assets/images/logo.png" alt class="logo-dark" height="60" />
         <img
-          src="@/assets/images/logo-dark.png"
-          alt
-          class="logo-dark"
-          height="24"
-        />
-        <img
-          src="@/assets/images/logo-light.png"
+          src="@/assets/images/logo.png"
           alt
           class="logo-light"
-          height="24"
+          height="60"
         />
-      </a>
+      </b-navbar-brand>
       <button
         class="navbar-toggler"
         type="button"
         @click="toggleMenu()"
         aria-label="Toggle navigation"
       >
-        <i class="mdi mdi-menu"></i>
+        <svg-icon
+          type="mdi"
+          :path="pathMenu"
+          style="color: #e48669;"
+        ></svg-icon>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul
-          class="navbar-nav ml-auto navbar-center"
+      <b-collapse class="navbar-collapse" id="navbarCollapse">
+        <b-navbar-nav
+          class="ml-auto navbar-center"
           id="mySidenav"
           v-scroll-spy-active
         >
-          <li class="nav-item">
-            <a
-              href="javascript: void(0);"
-              v-scroll-to="'#home'"
-              class="nav-link"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="javascript: void(0);"
-              v-scroll-to="{ el: '#features', offset: -2 }"
-              class="nav-link"
-              >Features</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="javascript: void(0);"
-              v-scroll-to="{ el: '#contact', offset: -50 }"
-              class="nav-link"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
+          <b-nav-item href="javascript: void(0);" v-scroll-to="'#home'"
+            >Home</b-nav-item
+          >
+          <b-nav-item
+            href="javascript: void(0);"
+            v-scroll-to="{ el: '#features', offset: -100 }"
+            >Features</b-nav-item
+          >
+          <b-nav-item
+            href="javascript: void(0);"
+            v-scroll-to="{ el: '#contact', offset: -50 }"
+            >Contact Us</b-nav-item
+          >
+        </b-navbar-nav>
+      </b-collapse>
+    </b-container>
   </nav>
   <!-- Navbar End -->
 </template>

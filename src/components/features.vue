@@ -1,17 +1,29 @@
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiChartBubble } from '@mdi/js';
+import { mdiAccountGroup, mdiAccountTie } from '@mdi/js';
 import {
   LayoutIcon,
   LifeBuoyIcon,
   ServerIcon,
   RssIcon,
 } from 'vue-feather-icons';
+import { BContainer, BRow, BCol } from 'bootstrap-vue';
+
 export default {
-  components: { LayoutIcon, LifeBuoyIcon, ServerIcon, RssIcon, SvgIcon },
+  components: {
+    LayoutIcon,
+    LifeBuoyIcon,
+    ServerIcon,
+    RssIcon,
+    SvgIcon,
+    BContainer,
+    BRow,
+    BCol,
+  },
   data() {
     return {
-      path: mdiChartBubble,
+      pathStudents: mdiAccountGroup,
+      pathManager: mdiAccountTie
     };
   },
 };
@@ -28,9 +40,9 @@ export default {
       }"
       id="features"
     >
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
+      <b-container>
+        <b-row class="justify-content-center">
+          <b-col lg="6">
             <div class="text-center mb-5">
               <h3 class="title mb-3">It's a Win-Win Platform</h3>
               <p class="text-muted font-size-15">
@@ -38,26 +50,25 @@ export default {
                 <br />We got you covered.
               </p>
             </div>
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-lg-6">
+          </b-col>
+        </b-row>
+        <b-row class="align-items-center">
+          <b-col lg="6">
             <div class="mb-4 mb-lg-0">
               <img
-                src="@/assets/images/32594.png"
+                src="@/assets/images/hero-2.webp"
                 alt
                 class="img-fluid d-block mx-auto"
               />
             </div>
-          </div>
+          </b-col>
 
-          <div class="col-lg-5 offset-lg-1">
+          <b-col lg="5" offset-lg="1">
             <p class="font-weight-medium text-uppercase mb-2">
               <svg-icon
                 type="mdi"
-                :path="path"
-                class="mdi h2 text-primary mr-1 align-middle"
+                :path="pathStudents"
+                class="mdi h2 text-primary mr-3 align-middle"
               ></svg-icon
               >Students
             </p>
@@ -72,13 +83,16 @@ export default {
               events with them.
             </p>
             <div class="mt-5">
-              <a href="javascript: void(0);" class="btn btn-primary mr-2"
+              <a
+                href="javascript: void(0);"
+                class="btn btn-primary mr-2"
+                v-scroll-to="{ el: '#home' }"
                 >Subscribe</a
               >
             </div>
-          </div>
-        </div>
-      </div>
+          </b-col>
+        </b-row>
+      </b-container>
     </section>
 
     <section
@@ -88,13 +102,15 @@ export default {
           'url(' + require('@/assets/images/features-bg-img-1.png') + ')',
       }"
     >
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-5">
+      <b-container>
+        <b-row class="align-items-center">
+          <b-col lg="5">
             <p class="font-weight-medium text-uppercase mb-2">
-              <i
-                class="mdi mdi-chart-bubble h2 text-primary mr-1 align-middle"
-              ></i>
+              <svg-icon
+                type="mdi"
+                :path="pathManager"
+                class="mdi h2 text-primary mr-1 align-middle"
+              ></svg-icon>
               Building Managers
             </p>
             <h3 class="font-weight-semibold line-height-1_4 mb-4">
@@ -106,22 +122,25 @@ export default {
               with the tenants by communication and events in the residence.
             </p>
             <div class="mt-5">
-              <a href="javascript: void(0);" class="btn btn-primary mr-2"
+              <a
+                href="javascript: void(0);"
+                class="btn btn-primary mr-2"
+                v-scroll-to="{ el: '#home' }"
                 >Subscribe</a
               >
             </div>
-          </div>
-          <div class="col-lg-6 offset-lg-1">
+          </b-col>
+          <b-col lg="6" offset-lg="1">
             <div class="mt-4 mt-lg-0">
               <img
-                src="@/assets/images/5576.png"
+                src="@/assets/images/hero-3.webp"
                 alt
                 class="img-fluid d-block mx-auto"
               />
             </div>
-          </div>
-        </div>
-      </div>
+          </b-col>
+        </b-row>
+      </b-container>
     </section>
     <!-- Features End -->
   </div>

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Material Design Icons";
+    font-family: "Montserrat";
     src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
@@ -7,7 +7,7 @@
 .mdi:before,
 .mdi-set {
     display: inline-block;
-    font: normal normal normal 24px/1 "Material Design Icons";
+    font: normal normal normal 24px/1 "Montserrat";
     font-size: inherit;
     text-rendering: auto;
     line-height: inherit;

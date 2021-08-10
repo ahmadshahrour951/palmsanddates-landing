@@ -7,10 +7,14 @@ import {
   mdiVote,
   mdiHelpCircle,
 } from '@mdi/js';
+import { BContainer, BRow, BCol } from 'bootstrap-vue';
 
 export default {
   components: {
     SvgIcon,
+    BContainer,
+    BRow,
+    BCol,
   },
   data() {
     return {
@@ -27,9 +31,9 @@ export default {
 <template>
   <!-- Why Choose Us Start -->
   <section class="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-4">
+    <b-container>
+      <b-row class="align-items-center">
+        <b-col lg="4">
           <div class="mb-4 mb-lg-0">
             <div class="p-2 bg-soft-primary d-inline-block rounded mb-4">
               <div class="icon-xxl">
@@ -40,17 +44,17 @@ export default {
                 ></svg-icon>
               </div>
             </div>
-            <h3 class>Mission</h3>
+            <h3>Mission</h3>
             <p class="text-muted mb-4 text-justify">
               Let's face it; the pandemic has stagnated communities. It's time
               to start building, and we ought to begin with those who do it
               best. Students.
             </p>
           </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-md-6">
+        </b-col>
+        <b-col lg="8">
+          <b-row>
+            <b-col md="6">
               <div
                 class="wc-box rounded text-center wc-box-primary p-4 mt-md-5"
               >
@@ -77,8 +81,8 @@ export default {
                   all we want.
                 </p>
               </div>
-            </div>
-            <div class="col-md-6">
+            </b-col>
+            <b-col md="6">
               <div class="wc-box rounded text-center wc-box-primary p-4">
                 <div class="wc-box-icon">
                   <svg-icon type="mdi" :path="pathVote"></svg-icon>
@@ -87,7 +91,8 @@ export default {
                   Democracy
                 </h5>
                 <p class="text-muted mb-0 font-size-15 wc-subtitle">
-                  Rather rely on your RA, vote on things that matter in your residence.
+                  Rather rely on your RA, vote on things that matter in your
+                  residence.
                 </p>
               </div>
               <div class="wc-box rounded text-center wc-box-primary p-4">
@@ -101,11 +106,11 @@ export default {
                   Get your voices heard; if you notice an issue, post a ticket!
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
   <!-- Why Choose Us End -->
 </template>
